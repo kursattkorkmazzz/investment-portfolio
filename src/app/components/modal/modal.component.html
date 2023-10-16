@@ -1,18 +1,8 @@
 <div
+id="root-modal"
   class="flex items-center justify-center absolute left-0 top-0 w-full h-full bg-black/40"
-  *ngIf="isVisible"
+  (click)="close($event)"
 >
-  <ng-container ngSwitch="{{ modelContent }}">
-    <ng-container *ngSwitchCase="'editBudget'">
-      <ng-container *ngTemplateOutlet="editBudget" />
-    </ng-container>
-  </ng-container>
+<ng-content></ng-content>
 </div>
 
-<!-- All modal types are listed below. -->
-
-<ng-template #editBudget>
-  <div class="bg-white px-5 py-2.5 rounded">
-    <app-input></app-input>
-  </div>
-</ng-template>

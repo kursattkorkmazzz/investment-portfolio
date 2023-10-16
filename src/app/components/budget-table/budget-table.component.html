@@ -1,7 +1,7 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  <table class="w-full text-sm text-left text-gray-500 ">
     <thead
-      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      class="text-xs text-gray-700 uppercase bg-gray-50"
     >
       <tr>
         <th scope="col" class="px-6 py-3 w-[20%]">Price (₺)</th>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tr
-      class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+      class="border-b bg-gray-50 "
       *ngIf="budgetItems.length <= 0"
     >
       <td
@@ -21,7 +21,7 @@
       </td>
     </tr>
     <tbody *ngFor="let budget of budgetItems">
-      <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+      <tr class="border-b bg-gray-50 ">
         <td class="px-6 py-4">{{ budget.amount }} ₺</td>
         <td class="px-6 py-4">{{ budget.description }}</td>
 

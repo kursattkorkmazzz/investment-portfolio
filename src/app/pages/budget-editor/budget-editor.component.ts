@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import BudgetItem, { mockBudgetItemData } from 'src/app/dto/budget-item';
 
 @Component({
@@ -11,8 +11,13 @@ export class BudgetEditorComponent {
   description: String = 'You can calculate easily your budget.';
   budgetList: BudgetItem[] = mockBudgetItemData;
 
+
   tempPrice: number | undefined;
   tempDescription: string = '';
+
+
+
+
 
   addBudgetItem() {
     if (!this.tempPrice) {

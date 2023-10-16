@@ -21,7 +21,9 @@
       Add Item to Budget
     </button>
   </div>
-
   <app-budget-table class="w-full" [(budgetItems)]="budgetList" />
 </div>
-<app-modal></app-modal>
+<app-modal #modal>
+  <app-edit-modal></app-edit-modal>
+</app-modal>
+

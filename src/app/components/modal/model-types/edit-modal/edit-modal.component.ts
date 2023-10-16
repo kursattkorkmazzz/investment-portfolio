@@ -1,4 +1,4 @@
-import { Component, Output, TemplateRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-edit-modal',
@@ -6,5 +6,5 @@ import { Component, Output, TemplateRef, ViewChild } from '@angular/core';
   styleUrls: ['./edit-modal.component.css'],
 })
 export class EditModalComponent {
-  @Output() @ViewChild('editModal') templateRef: TemplateRef<any> | null = null;
+
 }
