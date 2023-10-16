@@ -13,6 +13,7 @@ export class BudgetEditorComponent {
 
   budgetList: BudgetItem[] = mockBudgetItemData;
 
+
   tempBudget : {
     tempId: number
     tempPrice: number | undefined,

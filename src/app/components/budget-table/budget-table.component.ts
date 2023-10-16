@@ -53,7 +53,6 @@ export class BudgetTableComponent {
       return;
     }
 
-
     this.budgetItems.forEach((item) => {
       if(item == budgetItem){
         item.description = budgetItem.description + " Edited version";
