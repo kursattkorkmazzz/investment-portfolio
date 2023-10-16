@@ -4,13 +4,13 @@
     <app-input
       type="number"
       placeHolder="Enter price..."
-      [(value)]="tempPrice"
+      [(value)]="tempBudget.tempPrice"
     />
 
     <app-input
       type="text"
       placeHolder="Enter description..."
-      [(value)]="tempDescription"
+      [(value)]="tempBudget.tempDescription"
       class="w-full"
     />
     <button
@@ -21,7 +21,9 @@
       Add Item to Budget
     </button>
   </div>
-
   <app-budget-table class="w-full" [(budgetItems)]="budgetList" />
 </div>
-<app-modal></app-modal>
+<app-modal #modal>
+  <app-budget-edit-modal></app-budget-edit-modal>
+</app-modal>
+
