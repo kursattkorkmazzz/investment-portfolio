@@ -1,0 +1,79 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3 w-[20%]">Price (₺)</th>
+        <th scope="col" class="px-6 py-3">Description</th>
+        <th scope="col" class="px-6 py-3 w-[20%]">Action</th>
+      </tr>
+    </thead>
+    <tr
+      class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+      *ngIf="budgetItems.length <= 0"
+    >
+      <td
+        class="text-center px-6 py-4 opacity-[80%] select-none"
+        colspan="100%"
+      >
+        There is no budget items.
+      </td>
+    </tr>
+    <tbody *ngFor="let budget of budgetItems">
+      <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+        <td class="px-6 py-4">{{ budget.amount }} ₺</td>
+        <td class="px-6 py-4">{{ budget.description }}</td>
+
+        <td class="px-6 py-4 gap-3 flex">
+          <button type="button">
+            <svg
+              style="color: #e3a008"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-edit-3"
+            >
+              <path d="M12 20h9"></path>
+              <path
+                d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                fill="#E3A008"
+              ></path>
+            </svg>
+          </button>
+          <button type="button" (click)="removeBudgetItem(budget)">
+            <svg
+              style="color: #f98080"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="currentColor"
+              class="bi bi-trash-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+              ></path>
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tr class="border-b bg-primary">
+      <td
+        class="px-6 py-4"
+        [ngClass]="calculateNetBudget() > 0 ? 'text-green-400' : 'text-red-400'"
+      >
+        {{ calculateNetBudget() }} ₺
+      </td>
+      <td class="px-6 py-4 text-white opacity-[80%] select-none">Net Budget</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
